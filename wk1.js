@@ -1,0 +1,2 @@
+// Spiral Matrix
+const spiralOrder = (matrix, dir = 'r', res = []) => matrix.length ? dir === 'r' ? spiralOrder(matrix, 'd', res.concat(matrix.shift())) : dir === 'd' ? spiralOrder(matrix, 'l', res.concat(matrix.map(subArr => subArr.pop()))) : dir === 'l' ? spiralOrder(matrix, 'u', res.concat(matrix.pop().reverse())) : dir === 'u' ? spiralOrder(matrix, 'r', res.concat(matrix.map(subArr => subArr.shift()).reverse().filter(ele => ele))) : "TrulyObnoxious" : res
